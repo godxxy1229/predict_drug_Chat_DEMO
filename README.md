@@ -2,7 +2,7 @@
   <img src="https://github.com/GNU-BigData/Predicting-Drugs/assets/61715265/a5adda39-6d19-4f8a-824c-31732beea19f"/>
 </div>
 
-# 여기서 해보세요: https://godxxy1229.github.io/Predicting-Drugs-Service_DEMO
+# 여기서 해보세요: https://godxxy1229.github.io/predict_drug_Chat_DEMO/
 
 성격 유형을 검사하고, 나의 약물 위험도를 알아볼 수 있어요. 
 <div align="center">
