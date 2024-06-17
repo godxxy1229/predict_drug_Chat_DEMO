@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Drug Risk Results</title>
+    <link rel="stylesheet" href="css/final_page_styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&family=Nanum+Gothic+Coding&family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>약물 위험 테스트 결과</h1>
+    </header>
+
+    <section class="personality">
+        <p>나의 성격 유형은 다음과 같습니다.</p>
+        <div id="personalityType" class="personality-scores"></div>
+    </section>
+    
+
+    <div class="main-container">
+        <div id="personalityTypeChartContainer">
+            <div class = 'backgroundcolor'>
+                <canvas id="personalityTypeChart"></canvas>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="backgroundcolor">
+                <div class="ui-widgets">
+                    <div class="ui-values" id="riskPercentage"></div>
+                    <div id="riskLevel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="explanation">
+        <h2>위험 약물 분류</h2>
+        <p>위험도가 높은 상위 3개 약물에 대한 분류 결과입니다.</p>
+    </section>
+
+    <div id="topDrugsInfo" class="cards-container"></div>
+
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            성격 기반 결과에 대해 무엇이든 물어보세요:
+        </div>
+        <div id="chatbot-body">
+            <div id="chatbot-messages"></div>
+        </div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="메시지를 입력하세요...">
+            <button id="chatbot-submit">입력</button>
+        </div>
+    </div>
+
+    <section class="conclusion">
+        <img src="img/conclusion_end.png" alt="conclusion_img" width="500">
+        <button id = 'drugstop', onclick="window.open('https://www.drugfree.or.kr/introduce/index.html?contentsNum=6')">마약 중독 치료 센터 알아보기🔍</button>
+
+    </section>
+
+    <button onclick="window.location.href='index.html'">처음으로 돌아가기</button>
+    <button onclick="shareResults()">결과 공유하기</button>
+    <button id="drugs", onclick="window.open('https://jongman.kro.kr/drugs.html')">약물 종류</button>
+
+    <script src="https://utteranc.es/client.js"
+        repo="GNU-BigData/service-comments-repo"
+        issue-term="pathname"
+        label="Predict-drug"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    
+    <script src="js/final_page_script.js"></script>
+</body>
+</html>

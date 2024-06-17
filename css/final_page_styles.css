@@ -1,0 +1,416 @@
+@font-face {
+    font-family: 'YiSunShinDotumM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'YiSunShinDotumM', monospace;
+    font-weight: normal;
+    text-align: center;
+    background-color:#fffff5;
+    color: #333;
+    padding: 10px;
+}
+
+header h1 {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 48px;
+    font-family: 'YiSunShinDotumM', sans-serif;
+}
+
+section.explanation h2 {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 36px;
+    font-family: 'YiSunShinDotumM', sans-serif;
+}
+
+section.explanation p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-family: 'YiSunShinDotumM', sans-serif;
+}
+
+#personalityType {
+    margin: 20px 0;
+    margin-bottom: 50px;
+    font-size: 1.2em;
+}
+
+.personality p {
+    font-size: 1.2em;
+}
+
+.personality #personalityType {
+    font-size: 32px;
+}
+
+.personality-scores {
+    font-size: 22px; /* 성격 유형 글자 크기 */
+}
+
+.personality-scores .score {
+    font-size: 14px; /* 점수 글자 크기 */
+    margin-left: 5px; /* 점수와 유형 사이의 간격 */
+}
+
+
+#circularProgress {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#riskPercentage {
+    position: absolute;
+    font-size: 2em;
+    color: #333;
+}
+
+.cards-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.drug-info {
+    width: 220px;
+    height: 310px;
+    transition: transform 0.1s, box-shadow 0.1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background: white;
+    perspective: 1000px;
+}
+
+.drug-image {
+    width: 100%; 
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 1;
+}
+
+.drug-content {
+    padding: 10px;
+}
+
+.drug-info:hover .overlay {
+    filter: brightness(1.2) opacity(0.9);
+}
+
+.drug-info:active {
+    transform: scale(1.2);
+}
+
+.drug-info h3, .drug-info p {
+    margin: 15px;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(105deg, transparent 40%, rgba(255, 219, 112, 0.8) 45%, rgba(132, 50, 255 ,0.6) 50%, transparent 54%);
+    filter: brightness(1.1) opacity(0.8);
+    mix-blend-mode: color-dodge;
+    background-size: 150% 150%;
+    background-position: 100%;
+    transition: all 0.1s;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    z-index: 1000;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* 기존 CSS 코드 ... */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+
+section {
+    position: relative;
+    /* 필요한 경우 추가 스타일 */
+}
+
+section img {
+    position: relative;
+    width: 700px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+section button {
+    position: absolute;
+    top: 82%; /* 중앙에서 살짝 아래로 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    white-space: nowrap;
+    font-family: 'YiSunShinDotumM', sans-serif;
+    font-weight: normal;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #a4c8ffd3;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+button {
+    font-family: 'YiSunShinDotumM', sans-serif;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E0EBFC;
+    color: #3762CC;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #3762CC;
+    color: #E0EBFC;
+}
+
+section button:hover {
+    background-color: #E0EBFC;
+    color: #3762CC;
+}
+
+/* Other existing styles... */
+
+.container {
+    position: relative;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backgroundcolor {
+    position: relative;
+    background-color: #ffe9923a;
+    border-radius: 18px;
+    width: 300px;
+    height: 300px;
+    padding: 2rem;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+.ui-widgets {
+    position: relative;
+    display: inline-block;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    margin: 1rem;
+    border: 4rem solid #FEEEEE;
+    background-color: white;
+    border-top-color: #F9CFCF;
+    border-right-color: #F9A7A7;
+    border-left-color: #FEEEEE;
+    border-bottom-color: #fdf9f9;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.ui-values {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-size: 2.0rem;
+}
+
+.ui-labels {
+    position: absolute;
+    bottom: -16px;
+    width: 100%;
+    font-size: 16px;
+    color: black;
+}
+
+#personalityTypeChartContainer {
+    width: 300px;
+    height: 300px;
+    align-self: center;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: row; /* 가로 방향으로 정렬 */
+    justify-content: flex-start; /* 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 10px; /* 요소들 사이에 10px의 간격을 설정 */
+}
+
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#chatbot-body {
+    flex: 1;
+    padding: 10px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+#chatbot-messages {
+    display: flex;
+    flex-direction: column;
+}
+
+#chatbot-input-container {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+#chatbot-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #ccc;
+}
+
+#chatbot-submit {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#chatbot-submit:hover {
+    background-color: #0056b3;
+}
+
+.chatbot-message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #ececec;
+}
+
+
+.conclusion{
+    margin-top: 50px;
+}
+#drugstop {
+    font-family: 'YiSunShinDotumM';
+    font-weight: normal
+}
+
+#riskPercentage {
+    /* 필요한 스타일링 추가 */
+    font-size: 24px;
+}
+
+#riskLevel {
+    margin-top: 200px; /* 프로그레스바와 간격 조정 */
+    text-align: center;
+    /* 필요한 스타일링 추가 */
+}
+
+#personalityTypeChartContainer, .container {
+    flex: 1;
+    padding: 0 10px;
+}
+
+#personalityTypeChartContainer {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* 화면이 작을 때는 요소들을 세로로 쌓습니다 */
+    }
+
+    .main-container > div {
+        width: 100%; /* 화면이 작을 때는 요소의 너비를 100%로 설정합니다 */
+        margin: 10px 0; /* 세로 쌓을 때는 수직 마진을 조정합니다 */
+    }
+}
