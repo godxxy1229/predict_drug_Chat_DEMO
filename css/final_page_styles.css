@@ -305,6 +305,7 @@ canvas {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    z-index: 9999; /* 우선순위를 높이기 위해 z-index 추가 */
 }
 
 #chatbot-header {
@@ -331,6 +332,7 @@ canvas {
 #chatbot-input-container {
     display: flex;
     border-top: 1px solid #ccc;
+    background-color: #ffffff;
 }
 
 #chatbot-input {
